@@ -1,22 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <title>Idle</title>
-</head>
-<body>
-    <div class="game">
-        <div class="wrapper">
-            <div class="money" >Money <span data-money></span></div>
-            <div class="clickImg" data-click>
-                <img src="./assets/imgs/vinyl.png" alt="vinyl">
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <script
+      src="https://kit.fontawesome.com/a1913cf307.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Idle Music Empire</title>
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="left"></div>
+      <div class="right">
+        <div class="links">
+          <span href="#" data-save>Save</span>
+          <span href="#" data-load>Load</span>
+          <span href="#" data-reset>reset</span>
         </div>
+      </div>
     </div>
-    <script defer src="./src/script.js"></script>
-</body>
+    <div class="game">
+      <div class="wrapper">
+        <div class="left lr">
+          <div class="money">Money: <span data-money></span></div>
+          <div class="mps">MPS: <span data-mps></span></div>
+          <div class="clickImg" data-click>
+            <img src="./assets/imgs/vinyl.png" alt="vinyl" />
+          </div>
+        </div>
+
+        <div class="right lr">
+          <!-- UPGRADES -->
+          <div class="upgrades">
+            <!-- UPGRADE EQUIPMENT -->
+            <div class="block upgrade" id="upgradeEquipment">
+              <div class="icon">
+                <i class="fas fa-microphone"></i>
+              </div>
+              <div class="info">
+                <h3 class="name">Upgrade equipment</h3>
+                <h4 class="price">$<span data-price></span></h4>
+                <h4 class="count">Own: <span data-count></span></h4>
+                <h4 class="uMps">Mps: <span data-uMps></span></h4>
+              </div>
+            </div>
+            <!-- END -->
+
+            <!-- RELEASE A SONG -->
+            <div class="block upgrade" id="releaseSong">
+              <div class="icon">
+                <i class="fas fa-record-vinyl"></i>
+              </div>
+              <div class="info">
+                <h3 class="name">Release a song</h3>
+                <h4 class="price">$<span data-price></span></h4>
+                <h4 class="count">Own: <span data-count></span></h4>
+                <h4 class="uMps">Mps: <span data-uMps></span></h4>
+              </div>
+            </div>
+            <!-- END -->
+
+            <!-- RELEASE A ALBUM -->
+            <div class="block upgrade" id="releaseAlbum">
+              <div class="icon">
+                <i class="fas fa-compact-disc"></i>
+              </div>
+              <div class="info">
+                <h3 class="name">Release a album</h3>
+                <h4 class="price">$<span data-price></span></h4>
+                <h4 class="count">Own: <span data-count></span></h4>
+                <h4 class="uMps">Mps: <span data-uMps></span></h4>
+              </div>
+            </div>
+            <!-- END -->
+          </div>
+          <!-- END UPGRADES -->
+        </div>
+      </div>
+    </div>
+    <script defer type="module" src="./src/script.js"></script>
+  </body>
 </html>

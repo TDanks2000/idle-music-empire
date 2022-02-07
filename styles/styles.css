@@ -10,6 +10,12 @@
 }
 
 :root {
+  --color-purple: #9b59b6;
+  --color-blue: #3498db;
+  --color-dark-grey: #18191a;
+  --color-lighter-grey: #242526;
+  --color-lighter-grey-border: #333536;
+
   --transition-time: 400ms;
   --transition-curve: ease-in-out;
 }
@@ -17,31 +23,97 @@
 body,
 html {
   font-family: "Open Sans", sans;
+  background: var(--color-dark-grey);
 }
 
 * {
   box-sizing: border-box;
+  color: white;
 }
 
-img {
-  max-width: 100%;
-  max-height: 100%;
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 5vh;
+  background: var(--color-lighter-grey);
+  border-bottom: 1px solid var(--color-lighter-grey-border);
+}
+
+.nav .links {
+  text-align: right;
+}
+
+.nav .links span {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 1rem;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.nav .links span:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.nav .links span:first-of-type {
+  margin-left: 0;
 }
 
 .game {
   padding: 10px;
+  height: 95vh;
 }
 
-.money {
-  font-weight: bold;
+.wrapper {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 30%;
+}
+
+.lr + .lr {
+  border-left: 3px solid var(--color-lighter-grey-border);
+}
+
+.money,
+.mps {
+  font-family: "Roboto";
+  font-weight: 300;
   text-transform: uppercase;
-  font-size: 1.5em;
+  font-size: 4em;
+  text-align: center;
+}
+
+.mps {
+  margin-top: -1.5rem;
+  font-size: 2rem;
 }
 
 .clickImg {
-  width: 10%;
+  width: 20%;
   cursor: pointer;
   transition: all var(--transition-time) var(--transition-curve);
+  margin: 4em auto;
 }
 
 .clickImg:active {
@@ -53,4 +125,48 @@ img {
   animation-name: spin;
   animation-duration: var(--transition-time);
   animation-timing-function: linear;
+}
+
+.upgrades {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.upgrade {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 2em;
+  border-radius: 7px;
+  background: var(--color-blue);
+  overflow: hidden;
+  width: 90%;
+  align-self: center;
+  transition: all var(--transition-time) var(--transition-curve);
+  cursor: pointer;
+}
+
+.upgrade:hover {
+  opacity: 0.9;
+}
+
+.upgrade .icon {
+  display: inline-block;
+  font-size: 4em;
+}
+
+.upgrade .info {
+  margin-left: 1em;
+  text-align: right;
+}
+
+.upgrade .info .name {
+  text-transform: uppercase;
+}
+
+.upgrade .info .price {
+  font-weight: 500;
 }
